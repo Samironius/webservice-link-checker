@@ -26,7 +26,6 @@ class Policy:
 
         if ports[0] != ports[1]:
             return False
-
         return True 
 
     def read_db(self):
@@ -38,7 +37,6 @@ class Policy:
         return dict(zip(re.findall(regex, str(urls)), re.findall(regex, str(policy))))
 
     def finde_in_db(self):
-
         for x in self.read_db():
             if self.compare_urls(x, self.url) == True:
                 return self.read_db()[x]
